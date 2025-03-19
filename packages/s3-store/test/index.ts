@@ -6,7 +6,7 @@ import sinon from 'sinon'
 
 import {S3Store} from '../src'
 import * as shared from 'test/stores.test'
-import {Upload} from '@tus/utils'
+import {Upload} from '@jarvis394/tus-utils'
 
 const fixturesPath = path.resolve('../', '../', 'test', 'fixtures')
 const storePath = path.resolve('../', '../', 'test', 'output', 's3-store')

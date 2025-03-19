@@ -3,7 +3,7 @@ import {Readable} from 'node:stream'
 
 import {BaseHandler} from './BaseHandler'
 
-import {ERRORS, EVENTS, type CancellationContext, type Upload} from '@tus/utils'
+import {ERRORS, EVENTS, type CancellationContext, type Upload} from '@jarvis394/tus-utils'
 
 const log = debug('tus-node-server:handlers:patch')
 

@@ -1,4 +1,4 @@
-# `@tus/server`
+# `@jarvis394/tus-server`
 
 > 👉 **Note**: since 1.0.0 packages are split and published under the `@tus` scope. The
 > old package, `tus-node-server`, is considered unstable and will only receive security
@@ -29,7 +29,7 @@
 In Node.js >=20.19.0, install with npm:
 
 ```bash
-npm install @tus/server
+npm install @jarvis394/tus-server
 ```
 
 ## Use
@@ -37,8 +37,8 @@ npm install @tus/server
 A standalone server which stores files on disk.
 
 ```js
-const { Server } = require("@tus/server");
-const { FileStore } = require("@tus/file-store");
+const { Server } = require("@jarvis394/tus-server");
+const { FileStore } = require("@jarvis394/tus-file-store");
 const host = "127.0.0.1";
 const port = 1080;
 
@@ -105,7 +105,7 @@ This only changes the upload URL (`Location` header). If you also want to change
 name in storage use `namingFunction`. Returning `prefix-1234` in `namingFunction` means
 the `id` argument in `generateUrl` is `prefix-1234`.
 
-`@tus/server` expects everything in the path after the last `/` to be the upload id. If
+`@jarvis394/tus-server` expects everything in the path after the last `/` to be the upload id. If
 you change that you have to use `getFileIdFromRequest` as well.
 
 A common use case of this function and `getFileIdFromRequest` is to base65 encode a
@@ -129,7 +129,7 @@ Checkout the example how to
 
 Control how you want to name files (`(req: Request, metadata: Record<string, string>) => string | Promise<string>`)
 
-In `@tus/server`, the upload ID in the URL is the same as the file name. This means using
+In `@jarvis394/tus-server`, the upload ID in the URL is the same as the file name. This means using
 a custom `namingFunction` will return a different `Location` header for uploading and
 result in a different file name in storage.
 
@@ -213,8 +213,8 @@ You can implement your own `GET` handlers. For instance, to return all files.
 
 ```js
 const fs = require('node:fs/promises')
-const {Server} require('@tus/server')
-const {FileStore} require('@tus/file-store')
+const {Server} require('@jarvis394/tus-server')
+const {FileStore} require('@jarvis394/tus-file-store')
 
 const server = new Server({
   path: '/files',
@@ -248,7 +248,7 @@ You can listen for events by using the `.on()` method on the `Server` instance.
 Called after an upload has been created but before it's written to a store.
 
 ```js
-const {EVENTS} = require('@tus/server')
+const {EVENTS} = require('@jarvis394/tus-server')
 // ...
 server.on(EVENTS.POST_CREATE, (req, res, upload => {})
 ```
@@ -263,7 +263,7 @@ as `POST_FINISH`), whereas the `POST_RECEIVE_V2` event is emitted _while_ the re
 being handled.
 
 ```js
-const {EVENTS} = require('@tus/server')
+const {EVENTS} = require('@jarvis394/tus-server')
 // ...
 server.on(EVENTS.POST_RECEIVE, (req, res, upload => {})
 ```
@@ -281,7 +281,7 @@ emitted. If the PATCH request takes 2500ms, you would get the offset at 2000ms, 
 Use `POST_FINISH` if you need to know when an upload is done.
 
 ```js
-const {EVENTS} = require('@tus/server')
+const {EVENTS} = require('@jarvis394/tus-server')
 // ...
 server.on(EVENTS.POST_RECEIVE_V2, (req, upload => {})
 ```
@@ -291,7 +291,7 @@ server.on(EVENTS.POST_RECEIVE_V2, (req, upload => {})
 Called an upload has completed and after a response has been sent to the client.
 
 ```js
-const {EVENTS} = require('@tus/server')
+const {EVENTS} = require('@jarvis394/tus-server')
 // ...
 server.on(EVENTS.POST_FINISH, (req, res, upload => {})
 ```
@@ -301,7 +301,7 @@ server.on(EVENTS.POST_FINISH, (req, res, upload => {})
 Called after an upload has been terminated and a response has been sent to the client.
 
 ```js
-const {EVENTS} = require('@tus/server')
+const {EVENTS} = require('@jarvis394/tus-server')
 // ...
 server.on(EVENTS.POST_TERMINATE, (req, res, id => {})
 ```
@@ -311,14 +311,14 @@ server.on(EVENTS.POST_TERMINATE, (req, res, id => {})
 All stores (as in the `datastore` option) save two files, the uploaded file and an info
 file with metadata, usually adjacent to each other.
 
-In `@tus/file-store` the `FileKvStore` is used to persist upload info but the KV stores
-can also be used as a cache in other stores, such as `@tus/s3-store`.
+In `@jarvis394/tus-file-store` the `FileKvStore` is used to persist upload info but the KV stores
+can also be used as a cache in other stores, such as `@jarvis394/tus-s3-store`.
 
 #### `MemoryKvStore`
 
 ```ts
-import { MemoryKvStore } from "@tus/server";
-import S3Store, { type MetadataValue } from "@tus/s3-store";
+import { MemoryKvStore } from "@jarvis394/tus-server";
+import S3Store, { type MetadataValue } from "@jarvis394/tus-s3-store";
 
 new S3Store({
   // ...
@@ -329,8 +329,8 @@ new S3Store({
 #### `FileKvStore`
 
 ```ts
-import { FileKvStore } from "@tus/server";
-import S3Store, { type MetadataValue } from "@tus/s3-store";
+import { FileKvStore } from "@jarvis394/tus-server";
+import S3Store, { type MetadataValue } from "@jarvis394/tus-s3-store";
 
 const path = "./uploads";
 
@@ -343,8 +343,8 @@ new S3Store({
 #### `RedisKvStore`
 
 ```ts
-import { RedisKvStore } from "@tus/server";
-import S3Store, { type MetadataValue } from "@tus/s3-store";
+import { RedisKvStore } from "@jarvis394/tus-server";
+import S3Store, { type MetadataValue } from "@jarvis394/tus-s3-store";
 import { createClient } from "@redis/client";
 
 const client = await createClient().connect();
@@ -359,8 +359,8 @@ new S3Store({
 #### `IoRedisKvStore`
 
 ```ts
-import { IoRedisKvStore } from "@tus/server";
-import S3Store, { type MetadataValue } from "@tus/s3-store";
+import { IoRedisKvStore } from "@jarvis394/tus-server";
+import S3Store, { type MetadataValue } from "@jarvis394/tus-s3-store";
 import Redis from "ioredis";
 
 const client = new Redis();
@@ -377,8 +377,8 @@ new S3Store({
 ### Example: integrate tus into Express
 
 ```js
-const { Server } = require("@tus/server");
-const { FileStore } = require("@tus/file-store");
+const { Server } = require("@jarvis394/tus-server");
+const { FileStore } = require("@jarvis394/tus-file-store");
 const express = require("express");
 
 const host = "127.0.0.1";
@@ -401,8 +401,8 @@ app.listen(port, host);
 const http = require("node:http");
 const url = require("node:url");
 const Koa = require("koa");
-const { Server } = require("@tus/server");
-const { FileStore } = require("@tus/file-store");
+const { Server } = require("@jarvis394/tus-server");
+const { FileStore } = require("@jarvis394/tus-file-store");
 
 const app = new Koa();
 const appCallback = app.callback();
@@ -430,8 +430,8 @@ server.listen(port);
 
 ```js
 const fastify = require("fastify")({ logger: true });
-const { Server } = require("@tus/server");
-const { FileStore } = require("@tus/file-store");
+const { Server } = require("@jarvis394/tus-server");
+const { FileStore } = require("@jarvis394/tus-file-store");
 
 const tusServer = new Server({
   path: "/files",
@@ -479,8 +479,8 @@ Attach the tus server handler to a Next.js route handler in an
 
 ```ts
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Server, Upload } from "@tus/server";
-import { FileStore } from "@tus/file-store";
+import { Server, Upload } from "@jarvis394/tus-server";
+import { FileStore } from "@jarvis394/tus-file-store";
 
 /**
  * !Important. This will tell Next.js NOT Parse the body as tus requires
@@ -509,8 +509,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 `/app/api/upload/[[...slug]]/route.ts`
 
 ```ts
-import { Server } from "@tus/server";
-import { FileStore } from "@tus/file-store";
+import { Server } from "@jarvis394/tus-server";
+import { FileStore } from "@jarvis394/tus-file-store";
 
 const server = new Server({
   // `path` needs to match the route declared by the next file router
@@ -530,7 +530,7 @@ export const HEAD = server.handleWeb;
 ### Example: validate metadata when an upload is created
 
 ```js
-const { Server } = require("@tus/server");
+const { Server } = require("@jarvis394/tus-server");
 // ...
 
 const server = new Server({
@@ -555,7 +555,7 @@ Access control is opinionated and can be done in different ways. This example is
 psuedo-code for what it could look like with JSON Web Tokens.
 
 ```js
-const { Server } = require("@tus/server");
+const { Server } = require("@jarvis394/tus-server");
 // ...
 
 const server = new Server({
@@ -617,13 +617,13 @@ const server = new Server({
 
 In some cases, it is necessary to run behind a reverse proxy (Nginx, HAProxy etc), for
 example for TLS termination or serving multiple services on the same hostname. To properly
-do this, `@tus/server` and the proxy must be configured appropriately.
+do this, `@jarvis394/tus-server` and the proxy must be configured appropriately.
 
 Firstly, you must set `respectForwardedHeaders` indicating that a reverse proxy is in use
 and that it should respect the `X-Forwarded-*`/`Forwarded` headers:
 
 ```js
-const { Server } = require("@tus/server");
+const { Server } = require("@jarvis394/tus-server");
 // ...
 
 const server = new Server({
@@ -674,9 +674,9 @@ See
 [MIT](https://github.com/tus/tus-node-server/blob/master/license) ©
 [tus](https://github.com/tus)
 
-[`@tus/file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
-[`@tus/s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
-[`@tus/gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
+[`@jarvis394/tus-file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
+[`@jarvis394/tus-s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
+[`@jarvis394/tus-gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
 [`constants`]: https://github.com/tus/tus-node-server/blob/main/packages/utils/src/constants.ts
 [`types`]: https://github.com/tus/tus-node-server/blob/main/packages/server/src/types.ts
 [`models`]: https://github.com/tus/tus-node-server/blob/main/packages/utils/src/models/index.ts

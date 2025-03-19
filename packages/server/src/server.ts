@@ -2,8 +2,8 @@ import http from 'node:http'
 import {EventEmitter} from 'node:events'
 
 import debug from 'debug'
-import {EVENTS, ERRORS, EXPOSED_HEADERS, REQUEST_METHODS, TUS_RESUMABLE} from '@tus/utils'
-import type {DataStore, Upload, CancellationContext} from '@tus/utils'
+import {EVENTS, ERRORS, EXPOSED_HEADERS, REQUEST_METHODS, TUS_RESUMABLE} from '@jarvis394/tus-utils'
+import type {DataStore, Upload, CancellationContext} from '@jarvis394/tus-utils'
 
 import {BaseHandler} from './handlers/BaseHandler'
 import {GetHandler} from './handlers/GetHandler'

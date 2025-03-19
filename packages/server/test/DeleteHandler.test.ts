@@ -4,7 +4,7 @@ import {strict as assert} from 'node:assert'
 
 import sinon from 'sinon'
 
-import {ERRORS, EVENTS, DataStore, type CancellationContext} from '@tus/utils'
+import {ERRORS, EVENTS, DataStore, type CancellationContext} from '@jarvis394/tus-utils'
 import {DeleteHandler} from '../src/handlers/DeleteHandler'
 import {MemoryLocker} from '../src'
 

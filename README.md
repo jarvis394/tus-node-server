@@ -52,8 +52,8 @@ A standalone server which stores files on disk.
 > Try it yourself in [StackBlitz](https://stackblitz.com/edit/stackblitz-starters-zg6mgnuf?file=index.js)
 
 ```js
-const {Server} = require('@tus/server')
-const {FileStore} = require('@tus/file-store')
+const {Server} = require('@jarvis394/tus-server')
+const {FileStore} = require('@jarvis394/tus-file-store')
 
 const host = '127.0.0.1'
 const port = 1080
@@ -65,14 +65,14 @@ const server = new Server({
 server.listen({host, port})
 ```
 
-A tus server integrated into your existing Node.js server. `@tus/server` has no
+A tus server integrated into your existing Node.js server. `@jarvis394/tus-server` has no
 dependencies so it can be integrated in any server-side framework. More examples can be
-found in [`@tus/server`][].
+found in [`@jarvis394/tus-server`][].
 
 ```js
 const fastify = require('fastify')({ logger: true });
-const {Server} = require('@tus/server');
-const {FileStore} = require('@tus/file-store');
+const {Server} = require('@jarvis394/tus-server');
+const {FileStore} = require('@jarvis394/tus-file-store');
 
 const tusServer = new Server({
   path: '/files',
@@ -98,18 +98,18 @@ fastify.listen(3000, (err) => {
 
 ## Packages
 
-- [`@tus/server`][]. The tus server. Standalone or integrate it into your Node.js server.
-- [`@tus/file-store`][]. Store files on disk.
-- [`@tus/s3-store`][]. Store files on AWS S3.
-- [`@tus/gcs-store`][]. Store files on Google Cloud Storage.
-- [`@tus/azure-store`][]. Store files on Azure.
+- [`@jarvis394/tus-server`][]. The tus server. Standalone or integrate it into your Node.js server.
+- [`@jarvis394/tus-file-store`][]. Store files on disk.
+- [`@jarvis394/tus-s3-store`][]. Store files on AWS S3.
+- [`@jarvis394/tus-gcs-store`][]. Store files on Google Cloud Storage.
+- [`@jarvis394/tus-azure-store`][]. Store files on Azure.
 
 ## Extensions
 
 The tus protocol supports optional [extensions][]. Below is a table of the supported
 extensions.
 
-| Extension                | [`file-store`][`@tus/file-store`] | [`s3-store`][`@tus/s3-store`] | [`gcs-store`][`@tus/gcs-store`] | [`azure-store`][`@tus/azure-store`] |
+| Extension                | [`file-store`][`@jarvis394/tus-file-store`] | [`s3-store`][`@jarvis394/tus-s3-store`] | [`gcs-store`][`@jarvis394/tus-gcs-store`] | [`azure-store`][`@jarvis394/tus-azure-store`] |
 | ------------------------ | --------------------------------- | ----------------------------- | ------------------------------- | ----------------------------------- |
 | [Creation][]             | ✅                                | ✅                            | ✅                              | ✅                                  |
 | [Creation With Upload][] | ✅                                | ✅                            | ✅                              | ✅                                  |
@@ -137,11 +137,11 @@ See
 [tus](https://github.com/tus)
 
 [corepack]: https://nodejs.org/api/corepack.html
-[`@tus/server`]: https://github.com/tus/tus-node-server/tree/main/packages/server
-[`@tus/file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
-[`@tus/s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
-[`@tus/gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
-[`@tus/azure-store`]: https://github.com/tus/tus-node-server/tree/main/packages/azure-store
+[`@jarvis394/tus-server`]: https://github.com/tus/tus-node-server/tree/main/packages/server
+[`@jarvis394/tus-file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
+[`@jarvis394/tus-s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
+[`@jarvis394/tus-gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
+[`@jarvis394/tus-azure-store`]: https://github.com/tus/tus-node-server/tree/main/packages/azure-store
 [extensions]: https://tus.io/protocols/resumable-upload.html#protocol-extensions
 [creation]: https://tus.io/protocols/resumable-upload.html#creation
 [creation with upload]:

@@ -1,8 +1,8 @@
 import EventEmitter from 'node:events'
 
 import type {ServerOptions} from '../types'
-import type {DataStore, CancellationContext} from '@tus/utils'
-import {ERRORS, type Upload, StreamLimiter, EVENTS} from '@tus/utils'
+import type {DataStore, CancellationContext} from '@jarvis394/tus-utils'
+import {ERRORS, type Upload, StreamLimiter, EVENTS} from '@jarvis394/tus-utils'
 import throttle from 'lodash.throttle'
 import stream from 'node:stream/promises'
 import {PassThrough, type Readable} from 'node:stream'

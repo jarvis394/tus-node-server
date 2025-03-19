@@ -8,7 +8,7 @@ import type http from 'node:http'
 import debug from 'debug'
 
 import {type Configstore, FileConfigstore} from './configstores'
-import {DataStore, Upload, ERRORS} from '@tus/utils'
+import {DataStore, Upload, ERRORS} from '@jarvis394/tus-utils'
 
 export * from './configstores'
 

@@ -1,4 +1,4 @@
-# @tus/server
+# @jarvis394/tus-server
 
 ## 1.10.2
 
@@ -12,7 +12,7 @@
 
 - 42c6267: Consistent cancellation across streams and locks, fixing lock on file never being unlocked when the request ends prematurely.
 - Updated dependencies [42c6267]
-  - @tus/utils@0.5.1
+  - @jarvis394/tus-utils@0.5.1
 
 ## 1.10.0
 
@@ -24,7 +24,7 @@
 
 - f465a0f: Send Tus-Version header in OPTIONS
 - Updated dependencies [8f19a53]
-  - @tus/utils@0.5.0
+  - @jarvis394/tus-utils@0.5.0
 
 ## 1.9.0
 
@@ -43,7 +43,7 @@
 ### Patch Changes
 
 - Updated dependencies [de28c6e]
-  - @tus/utils@0.4.0
+  - @jarvis394/tus-utils@0.4.0
 
 ## 1.7.0
 
@@ -55,7 +55,7 @@
 ### Patch Changes
 
 - Updated dependencies [117e1b2]
-  - @tus/utils@0.3.0
+  - @jarvis394/tus-utils@0.3.0
 
 ## 1.6.0
 
@@ -68,7 +68,7 @@
 ### Patch Changes
 
 - Updated dependencies [60698da]
-  - @tus/utils@0.2.0
+  - @jarvis394/tus-utils@0.2.0
 
 ## 1.5.0
 
@@ -94,9 +94,9 @@
 ### Minor Changes
 
 - 1a4339a: Support async `namingFunction`
-- a896d25: Add new @tus/utils dependency to replace @tus/server peer dependency
+- a896d25: Add new @jarvis394/tus-utils dependency to replace @jarvis394/tus-server peer dependency
 
 ### Patch Changes
 
 - Updated dependencies [a896d25]
-  - @tus/utils@0.1.0
+  - @jarvis394/tus-utils@0.1.0

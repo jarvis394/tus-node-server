@@ -2,7 +2,7 @@ import {strict as assert} from 'node:assert'
 
 import sinon from 'sinon'
 
-import {ERRORS, DataStore, Upload, type CancellationContext} from '@tus/utils'
+import {ERRORS, DataStore, Upload, type CancellationContext} from '@jarvis394/tus-utils'
 import {HeadHandler} from '../src/handlers/HeadHandler'
 import {MemoryLocker} from '../src'
 

@@ -1,4 +1,4 @@
-# `@tus/file-store`
+# `@jarvis394/tus-file-store`
 
 > 👉 **Note**: since 1.0.0 packages are split and published under the `@tus` scope. The
 > old package, `tus-node-server`, is considered unstable and will only receive security
@@ -23,14 +23,14 @@
 In Node.js >=20.19.0, install with npm:
 
 ```bash
-npm install @tus/file-store
+npm install @jarvis394/tus-file-store
 ```
 
 ## Use
 
 ```js
-const {Server} = require('@tus/server')
-const {FileStore} = require('@tus/file-store')
+const {Server} = require('@jarvis394/tus-server')
+const {FileStore} = require('@jarvis394/tus-file-store')
 
 const server = new Server({
   path: '/files',
@@ -56,7 +56,7 @@ The directory to store the files on disk (`string`).
 Provide your own storage solution for the metadata of uploads ([`KvStore`][]).
 
 Default uses `FileKvStore` which puts the metadata file next to the uploaded file. See the
-exported [KV stores][kvstores] from `@tus/server` for more information.
+exported [KV stores][kvstores] from `@jarvis394/tus-server` for more information.
 
 #### `options.expirationPeriodInMilliseconds`
 
@@ -68,9 +68,9 @@ expired, uploads can be removed with [`cleanUpExpiredUploads`][].
 ## Extensions
 
 The tus protocol supports optional [extensions][]. Below is a table of the supported
-extensions in `@tus/file-store`.
+extensions in `@jarvis394/tus-file-store`.
 
-| Extension                | `@tus/file-store` |
+| Extension                | `@jarvis394/tus-file-store` |
 | ------------------------ | ----------------- |
 | [Creation][]             | ✅                |
 | [Creation With Upload][] | ✅                |
@@ -87,7 +87,7 @@ For demonstration purposes we will create a memory config store, but that's not 
 idea. It's written in TypeScript.
 
 ```ts
-import type {Upload} from '@tus/server'
+import type {Upload} from '@jarvis394/tus-server'
 
 export class MemoryConfigstore {
   data: Map<string, Upload> = new Map()

@@ -1,5 +1,5 @@
 import {BaseHandler} from './BaseHandler'
-import {type CancellationContext, ERRORS, type Upload} from '@tus/utils'
+import {type CancellationContext, ERRORS, type Upload} from '@jarvis394/tus-utils'
 
 import type {RouteHandler} from '../types'
 

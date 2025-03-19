@@ -3,4 +3,4 @@ export {
   MemoryKvStore as MemoryConfigstore,
   RedisKvStore as RedisConfigstore,
   KvStore as Configstore,
-} from '@tus/utils'
+} from '@jarvis394/tus-utils'

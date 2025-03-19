@@ -1,4 +1,4 @@
-import type {Locker, Upload} from '@tus/utils'
+import type {Locker, Upload} from '@jarvis394/tus-utils'
 
 /**
  * Represents the configuration options for a server.

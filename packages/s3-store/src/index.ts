@@ -15,7 +15,7 @@ import {
   TUS_RESUMABLE,
   type KvStore,
   MemoryKvStore,
-} from '@tus/utils'
+} from '@jarvis394/tus-utils'
 
 import {Semaphore, type Permit} from '@shopify/semaphore'
 import MultiStream from 'multistream'

@@ -8,7 +8,7 @@ import path from 'node:path'
 import sinon from 'sinon'
 
 import {FileStore, FileConfigstore} from '../src'
-import {Upload} from '@tus/utils'
+import {Upload} from '@jarvis394/tus-utils'
 
 import * as shared from 'test/stores.test'
 

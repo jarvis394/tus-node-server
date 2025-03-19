@@ -9,7 +9,7 @@ import {
   ALLOWED_HEADERS,
   MAX_AGE,
   type CancellationContext,
-} from '@tus/utils'
+} from '@jarvis394/tus-utils'
 import {MemoryLocker, type ServerOptions} from '../src'
 
 describe('OptionsHandler', () => {

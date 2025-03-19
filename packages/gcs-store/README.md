@@ -1,4 +1,4 @@
-# `@tus/gcs-store`
+# `@jarvis394/tus-gcs-store`
 
 > 👉 **Note**: since 1.0.0 packages are split and published under the `@tus` scope. The
 > old package, `tus-node-server`, is considered unstable and will only receive security
@@ -20,14 +20,14 @@
 In Node.js >=20.19.0, install with npm:
 
 ```bash
-npm install @tus/gcs-store
+npm install @jarvis394/tus-gcs-store
 ```
 
 ## Use
 
 ```js
-const {Server} = require('@tus/server')
-const {GCSStore} = require('@tus/gcs-store')
+const {Server} = require('@jarvis394/tus-server')
+const {GCSStore} = require('@jarvis394/tus-gcs-store')
 
 const {Storage} = require('@google-cloud/storage')
 
@@ -57,9 +57,9 @@ The bucket instance
 ## Extensions
 
 The tus protocol supports optional [extensions][]. Below is a table of the supported
-extensions in `@tus/gcs-store`.
+extensions in `@jarvis394/tus-gcs-store`.
 
-| Extension                | `@tus/gcs-store` |
+| Extension                | `@jarvis394/tus-gcs-store` |
 | ------------------------ | ---------------- |
 | [Creation][]             | ✅               |
 | [Creation With Upload][] | ✅               |

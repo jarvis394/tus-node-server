@@ -1,5 +1,5 @@
 import {BaseHandler} from './BaseHandler'
-import {ERRORS, EVENTS, type CancellationContext} from '@tus/utils'
+import {ERRORS, EVENTS, type CancellationContext} from '@jarvis394/tus-utils'
 
 export class DeleteHandler extends BaseHandler {
   async send(req: Request, context: CancellationContext, headers = new Headers()) {

@@ -6,7 +6,7 @@ import type http from 'node:http'
 import sinon from 'sinon'
 
 import {PatchHandler} from '../src/handlers/PatchHandler'
-import {EVENTS, Upload, DataStore, type CancellationContext} from '@tus/utils'
+import {EVENTS, Upload, DataStore, type CancellationContext} from '@jarvis394/tus-utils'
 import {MemoryLocker} from '../src'
 import streamP from 'node:stream/promises'
 import stream, {PassThrough} from 'node:stream'

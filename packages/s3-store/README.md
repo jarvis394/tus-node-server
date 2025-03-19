@@ -1,4 +1,4 @@
-# `@tus/s3-store`
+# `@jarvis394/tus-s3-store`
 
 > 👉 **Note**: since 1.0.0 packages are split and published under the `@tus` scope. The
 > old package, `tus-node-server`, is considered unstable and will only receive security
@@ -25,14 +25,14 @@
 In Node.js >=20.19.0, install with npm:
 
 ```bash
-npm install @tus/s3-store
+npm install @jarvis394/tus-s3-store
 ```
 
 ## Use
 
 ```js
-const {Server} = require('@tus/server')
-const {S3Store} = require('@tus/s3-store')
+const {Server} = require('@jarvis394/tus-server')
+const {S3Store} = require('@jarvis394/tus-s3-store')
 
 const s3Store = new S3Store({
   partSize: 8 * 1024 * 1024, // Each uploaded part will have ~8MiB,
@@ -111,7 +111,7 @@ Default uses an in-memory cache (`MemoryKvStore`). When running multiple instanc
 server, you need to provide a cache implementation that is shared between all instances
 like the `RedisKvStore`.
 
-See the exported [KV stores][kvstores] from `@tus/server` for more information.
+See the exported [KV stores][kvstores] from `@jarvis394/tus-server` for more information.
 
 #### `options.maxConcurrentPartUploads`
 
@@ -141,9 +141,9 @@ overall upload bandwidth available for other concurrent uploads.
 ## Extensions
 
 The tus protocol supports optional [extensions][]. Below is a table of the supported
-extensions in `@tus/s3-store`.
+extensions in `@jarvis394/tus-s3-store`.
 
-| Extension                | `@tus/s3-store` |
+| Extension                | `@jarvis394/tus-s3-store` |
 | ------------------------ | --------------- |
 | [Creation][]             | ✅              |
 | [Creation With Upload][] | ✅              |
@@ -200,8 +200,8 @@ docs for the supported values of
 
 ```js
 const aws = require('aws-sdk')
-const {Server} = require('@tus/server')
-const {S3Store} = require('@tus/s3-store')
+const {Server} = require('@jarvis394/tus-server')
+const {S3Store} = require('@jarvis394/tus-s3-store')
 
 const s3Store = new S3Store({
   partSize: 8 * 1024 * 1024,
@@ -220,7 +220,7 @@ const server = new Server({path: '/files', datastore: s3Store})
 
 ### Example: use with Cloudflare R2
 
-`@tus/s3-store` can be used with all S3-compatible storage solutions, including Cloudflare R2.
+`@jarvis394/tus-s3-store` can be used with all S3-compatible storage solutions, including Cloudflare R2.
 However R2 requires that all non-trailing parts are _exactly_ the same size.
 This can be achieved by setting `partSize` and `minPartSize` to the same value.
 
@@ -236,7 +236,7 @@ const s3Store = new S3Store({
 
 ### Example: use with Scaleway Object Storage
 
-`@tus/s3-store` can be used with Scaleway Object Storage but with some additional configuration. Scaleway Object Storage has a limit of 1,000 parts in a multipart upload.
+`@jarvis394/tus-s3-store` can be used with Scaleway Object Storage but with some additional configuration. Scaleway Object Storage has a limit of 1,000 parts in a multipart upload.
 
 ```ts
 const s3Store = new S3Store({

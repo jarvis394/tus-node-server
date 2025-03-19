@@ -1,5 +1,5 @@
-import {S3Store} from '@tus/s3-store'
-import {Server, TUS_RESUMABLE} from '@tus/server'
+import {S3Store} from '@jarvis394/tus-s3-store'
+import {Server, TUS_RESUMABLE} from '@jarvis394/tus-server'
 import type {SuperAgentTest} from 'supertest'
 import request from 'supertest'
 import type http from 'node:http'

@@ -1,4 +1,4 @@
-import {TUS_VERSION, TUS_RESUMABLE, Metadata} from '@tus/utils'
+import {TUS_VERSION, TUS_RESUMABLE, Metadata} from '@jarvis394/tus-utils'
 
 type validator = (value?: string) => boolean
 

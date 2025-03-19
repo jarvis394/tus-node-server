@@ -1,4 +1,4 @@
-# @tus/utils
+# @jarvis394/tus-utils
 
 ## 0.5.1
 
@@ -37,4 +37,4 @@
 
 ### Minor Changes
 
-- a896d25: Introduce @tus/utils for code sharing between packages
+- a896d25: Introduce @jarvis394/tus-utils for code sharing between packages

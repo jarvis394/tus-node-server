@@ -1,5 +1,5 @@
 ---
-"@tus/server": major
+"@jarvis394/tus-server": major
 ---
 
 - Introduce `handleWeb(req: Request)` to integrate into meta frameworks

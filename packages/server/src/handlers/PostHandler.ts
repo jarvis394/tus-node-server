@@ -10,7 +10,7 @@ import {
   ERRORS,
   type DataStore,
   type CancellationContext,
-} from '@tus/utils'
+} from '@jarvis394/tus-utils'
 import {validateHeader} from '../validators/HeaderValidator'
 
 import type {ServerOptions, WithRequired} from '../types'

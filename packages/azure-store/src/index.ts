@@ -8,7 +8,7 @@ import {
   MemoryKvStore,
   TUS_RESUMABLE,
   Metadata,
-} from '@tus/utils'
+} from '@jarvis394/tus-utils'
 import {
   type AppendBlobClient,
   type BlobGetPropertiesResponse,

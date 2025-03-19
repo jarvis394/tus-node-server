@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@tus/server",
+  "name": "@jarvis394/tus-server",
   "version": "1.10.2",
   "description": "Tus resumable upload protocol in Node.js",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
     "test": "mocha --timeout 40000 --exit --extension ts --require ts-node/register"
   },
   "dependencies": {
-    "@tus/utils": "^0.5.1",
+    "@jarvis394/tus-utils": "^0.5.1",
     "debug": "^4.3.4",
     "lodash.throttle": "^4.1.1",
     "set-cookie-parser": "^2.7.1"

@@ -1,6 +1,6 @@
 import {BaseHandler} from './BaseHandler'
 
-import {ERRORS, Metadata, type Upload, type CancellationContext} from '@tus/utils'
+import {ERRORS, Metadata, type Upload, type CancellationContext} from '@jarvis394/tus-utils'
 
 export class HeadHandler extends BaseHandler {
   async send(req: Request, context: CancellationContext, headers = new Headers()) {

@@ -1,11 +1,11 @@
-# @tus/file-store
+# @jarvis394/tus-file-store
 
 ## 1.5.1
 
 ### Patch Changes
 
 - Updated dependencies [8f19a53]
-  - @tus/utils@0.5.0
+  - @jarvis394/tus-utils@0.5.0
 
 ## 1.5.0
 
@@ -16,7 +16,7 @@
 ### Patch Changes
 
 - Updated dependencies [de28c6e]
-  - @tus/utils@0.4.0
+  - @jarvis394/tus-utils@0.4.0
 
 ## 1.4.0
 
@@ -29,14 +29,14 @@
 ### Patch Changes
 
 - Updated dependencies [117e1b2]
-  - @tus/utils@0.3.0
+  - @jarvis394/tus-utils@0.3.0
 
 ## 1.3.3
 
 ### Patch Changes
 
 - Updated dependencies [60698da]
-  - @tus/utils@0.2.0
+  - @jarvis394/tus-utils@0.2.0
 
 ## 1.3.2
 
@@ -54,9 +54,9 @@
 
 ### Minor Changes
 
-- a896d25: Add new @tus/utils dependency to replace @tus/server peer dependency
+- a896d25: Add new @jarvis394/tus-utils dependency to replace @jarvis394/tus-server peer dependency
 
 ### Patch Changes
 
 - Updated dependencies [a896d25]
-  - @tus/utils@0.1.0
+  - @jarvis394/tus-utils@0.1.0

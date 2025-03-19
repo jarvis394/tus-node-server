@@ -5,7 +5,7 @@ import {strict as assert} from 'node:assert'
 
 import sinon from 'sinon'
 
-import {EVENTS, Upload, DataStore, type CancellationContext} from '@tus/utils'
+import {EVENTS, Upload, DataStore, type CancellationContext} from '@jarvis394/tus-utils'
 import {PostHandler} from '../src/handlers/PostHandler'
 import {MemoryLocker} from '../src'
 

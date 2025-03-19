@@ -1,7 +1,7 @@
 import {strict as assert} from 'node:assert'
 
 import {BaseHandler} from '../src/handlers/BaseHandler'
-import {DataStore} from '@tus/utils'
+import {DataStore} from '@jarvis394/tus-utils'
 import {MemoryLocker} from '../src'
 
 describe('BaseHandler', () => {

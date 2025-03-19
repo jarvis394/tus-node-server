@@ -7,8 +7,8 @@ import stream from 'node:stream'
 import sinon from 'sinon'
 
 import {GetHandler} from '../src/handlers/GetHandler'
-import {type CancellationContext, DataStore, Upload} from '@tus/utils'
-import {FileStore} from '@tus/file-store'
+import {type CancellationContext, DataStore, Upload} from '@jarvis394/tus-utils'
+import {FileStore} from '@jarvis394/tus-file-store'
 import {MemoryLocker} from '../src'
 
 describe('GetHandler', () => {

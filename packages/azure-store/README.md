@@ -1,4 +1,4 @@
-# `@tus/azure-store`
+# `@jarvis394/tus-azure-store`
 
 Azure Store based on the Append Blob Client [Azure Blob AppendBlobClient](https://learn.microsoft.com/en-us/rest/api/storageservices/append-block).
 
@@ -19,14 +19,14 @@ Azure Store based on the Append Blob Client [Azure Blob AppendBlobClient](https:
 In Node.js >=20.19.0, install with npm:
 
 ```bash
-npm install @tus/azure-store
+npm install @jarvis394/tus-azure-store
 ```
 
 ## Use
 
 ```js
-const {Server} = require('@tus/server')
-const {AzureStore} = require('@tus/azure-store')
+const {Server} = require('@jarvis394/tus-server')
+const {AzureStore} = require('@jarvis394/tus-azure-store')
 
 const server = new Server({
   path: '/files',
@@ -67,9 +67,9 @@ Default is ([`MemoryKvStore`][]) which stores the data in memory.
 ## Extensions
 
 The tus protocol supports optional [extensions][]. Below is a table of the supported
-extensions in `@tus/azure-store`. More will be added in the future releases.
+extensions in `@jarvis394/tus-azure-store`. More will be added in the future releases.
 
-| Extension                | `@tus/file-store` |
+| Extension                | `@jarvis394/tus-file-store` |
 | ------------------------ | ----------------- |
 | [Creation][]             | ✅                |
 | [Creation With Upload][] | ✅                |

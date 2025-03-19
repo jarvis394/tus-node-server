@@ -1,5 +1,5 @@
 import {BaseHandler} from './BaseHandler'
-import {ALLOWED_METHODS, MAX_AGE, HEADERS, type CancellationContext} from '@tus/utils'
+import {ALLOWED_METHODS, MAX_AGE, HEADERS, type CancellationContext} from '@jarvis394/tus-utils'
 
 // A successful response indicated by the 204 No Content status MUST contain
 // the Tus-Version header. It MAY include the Tus-Extension and Tus-Max-Size headers.

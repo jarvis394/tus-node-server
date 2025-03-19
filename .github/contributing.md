@@ -10,13 +10,13 @@ entry.
 ## Tests
 
 You can run tests for individual packages by running a NPM workspace command. For
-instance, for the `@tus/server`:
+instance, for the `@jarvis394/tus-server`:
 
 ```bash
-npm run --workspace @tus/server test
+npm run --workspace @jarvis394/tus-server test
 ```
 
-Running tests for `@tus/gcs-store` requires a `keyfile.json` with credentials to be
+Running tests for `@jarvis394/tus-gcs-store` requires a `keyfile.json` with credentials to be
 present in root.
 
 `@uppy/s3-store` also requires credentials, but these should be injected. The easiest way
@@ -32,7 +32,7 @@ export AWS_REGION="***"
 And run it:
 
 ```bash
-source .env.sh && npm run --workspace @tus/s3-store test
+source .env.sh && npm run --workspace @jarvis394/tus-s3-store test
 ```
 
 You can run all tests with (requires both S3 and GCS credentials):
